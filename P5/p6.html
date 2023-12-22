@@ -1,0 +1,74 @@
+<!-- I think I deserve a 4 especially because I spent so much time (15+ hours)
+on trying to figure out culling for my cube using normal vectors. I was so close to giving up, but I ultimately succeeded
+and the commented out code illustrates my effort and I learned a lot of Computer Graphics via this attempt.
+I hope my effort and the obstacles I over came should not go unnoticed. Further, the cube rotating and 
+traveling along an adjustable curve with culling already fulfills many requisites for a 4. -->
+
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="James Cui">
+    <title>James Cui Camera Cube</title>
+    <style>
+      .button {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 26px;
+        cursor: pointer;
+        position: absolute;
+        text-align: center;
+        outline: none;
+        color: #fff;
+        background-color: #0ef43c;
+      }
+
+      .button:active {
+        background-color: #000000;
+      }
+      .pedal {
+        display: inline-block;
+        padding: 1px 40px;
+        font-size: 30px;
+        text-align: center;
+        outline: none;
+        background-color: #fff;
+      }
+      .pedal:active {
+        background-color: #000000;
+      }
+      .playercontainer {
+        text-align: center;
+        display: inline-block; /* Display the containers next to each other */
+        margin: 10px;
+      }
+
+  </style>
+  </head>
+  <body> 
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    Third-Person POV
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    Camera POV</br>
+    </br>
+    <canvas id="observerCanvas" width="500" height="500" style="border:1px solid #000000;"></canvas>
+    <canvas id="cameraCanvas" width="500" height="500" style="border:1px solid #000000;"></canvas>
+    </br>
+    <label> Cube Speed</label>
+    <input id="slider1" type="range" min="0" max="150" />
+    <label>&nbsp&nbsp&nbsp&nbsp&nbspMove Camera</label>
+    <input id="slider2" type="range" min="0" max="100" />
+    <label>&nbsp&nbsp&nbsp&nbsp&nbsp Change Curve</label>
+    <input id="slider3" type="range" min="0" max="60" />
+    </canvas>
+    <br> <br>
+    <button class="button" onclick="setup()">Start!</button>
+    <script type="text/javascript" src="gl-matrix-min.js"></script>
+    <script src="p6.js" id="module"></script>
+  </body>
+</html>

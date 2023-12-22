@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="James Cui">
+    <title>James Cui Formula 1 Project 4</title>
+    <style>
+      .button {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 26px;
+        cursor: pointer;
+        position: absolute;
+        text-align: center;
+        outline: none;
+        color: #fff;
+        background-color: #0ef43c;
+      }
+
+      .button:active {
+        background-color: #000000;
+      }
+      .pedal {
+        display: inline-block;
+        padding: 1px 40px;
+        font-size: 30px;
+        text-align: center;
+        outline: none;
+        background-color: #fff;
+      }
+      .pedal:active {
+        background-color: #000000;
+      }
+      .playercontainer {
+        text-align: center;
+        display: inline-block; /* Display the containers next to each other */
+        margin: 10px;
+      }
+
+  </style>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="700" height="600"></canvas>
+    <br/>
+    <div class = "playercontainer">
+      <h1 class="counter-display">Player 1 Pedals</h1>
+      <button class="pedal" onclick="breakPedal()">-</button>
+      <button class="pedal" onclick="gasPedal()">+</button>
+    </div>
+    <div class = "playercontainer">
+      <h1 class="counter-display">Player 2 Pedals</h1>
+      <button class="pedal" onclick="breakPedal2()">-</button>
+      <button class="pedal" onclick="gasPedal2()">+</button>
+    </div>
+    <div class = "playercontainer">
+      <h1 class="counter-display">Player 3 Pedals</h1>
+      <button class="pedal" onclick="breakPedal3()">-</button>
+      <button class="pedal" onclick="gasPedal3()">+</button>
+    </div>
+    <br>
+    <label>Car 1 Speed</label>
+    <input id="slider1" type="range" min="20" max="150" />
+    <label>&nbsp&nbsp&nbsp&nbsp&nbspCar 2 Speed</label>
+    <input id="slider2" type="range" min="20" max="150" />
+    <label>&nbsp&nbsp&nbsp&nbsp&nbspCar 3 Speed</label>
+    <input id="slider3" type="range" min="20" max="150" />
+    </canvas>
+    <br> <br>
+    <button class="button" onclick="setup()">Start!</button>
+    <script type="text/javascript" src="gl-matrix-min.js"></script>
+    <script src="2Pedals5LapRace.js" id="module"></script>
+  </body>
+</html>
