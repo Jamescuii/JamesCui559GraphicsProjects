@@ -98,6 +98,13 @@ function setup() {
         let faces = [[0, 1, 2, 3], [0, 4, 5, 1], [1, 5, 6, 2], [3, 2, 6, 7], [0, 3, 7, 4], [4, 7, 6, 5]];
 
         for (let index = faces.length - 1; index > -1; -- index) {
+            let temp;
+            if(index == 0) temp = "blue";
+            else if(index == 1) temp = "green";
+            else if(index == 2) temp = "red";
+            else if(index == 3) temp = "orange";
+            else if(index == 4) temp = "yellow";
+            else temp = "purple";
 
             let face = faces[index];
 
@@ -119,7 +126,7 @@ function setup() {
             let n  = [v1[1] * v2[2] - v1[2] * v2[1], v1[2] * v2[0] - v1[0] * v2[2], v1[0] * v2[1] - v1[1] * v2[0]];
             if(index != 4 || index != 2) {
                 if ((390-pmid[0]) * n[0] + (265-pmid[1]) * n[1] + (195-pmid[2]) * n[2] <= 0) {
-                context.fillStyle="purple";
+                context.fillStyle=temp;
                 context.lineWidth = '2';
                 context.strokeStyle=linecolor;
                 context.beginPath();
@@ -130,13 +137,12 @@ function setup() {
                 context.closePath();
                 context.fill();
                 context.stroke();
-    
                 }
             }
             else {
                 if ((200-pmid[0]) * n[0] + (360-pmid[1]) * n[1] + (200-pmid[2]) * n[2] <= 0) {
                 //if ((eyeCamera[0]-pmid[0]) * n[0] + (eyeCamera[1]-pmid[1]) * n[1] + (eyeCamera[2]-pmid[2]) * n[2] >= 0) {
-                    context.fillStyle="purple";
+                    context.fillStyle=temp;
                     context.lineWidth = '2';
                     context.strokeStyle=linecolor;
                     context.beginPath();
@@ -357,6 +363,14 @@ function setup() {
 
         for (let index = faces.length - 1; index > -1; -- index) {
 
+            let temp;
+            if(index == 0) temp = "yellow";
+            else if(index == 1) temp = "green";
+            else if(index == 2) temp = "purple";
+            else if(index == 3) temp = "orange";
+            else if(index == 4) temp = "blue";
+            else temp = "red";
+
             let face = faces[index];
 
             let pmid = [0, 0, 0];
@@ -381,7 +395,7 @@ function setup() {
             let n  = [v1[1] * v2[2] - v1[2] * v2[1], v1[2] * v2[0] - v1[0] * v2[2], v1[0] * v2[1] - v1[1] * v2[0]];
             if(index != 4 || index != 2) {
                 if ((xx+250-pmid[0]) * n[0] + (yy-pmid[1]) * n[1] + (zz+3500-pmid[2]) * n[2] <= 0) {
-                context.fillStyle="purple";
+                context.fillStyle=temp;
                 context.lineWidth = '2';
                 context.strokeStyle=linecolor;
                 context.beginPath();
@@ -398,7 +412,7 @@ function setup() {
             else {
                 if ((xx+250-pmid[0]) * n[0] + (yy-pmid[1]) * n[1] + (zz+600-pmid[2]) * n[2] <= 0) {
                 //if ((eyeCamera[0]-pmid[0]) * n[0] + (eyeCamera[1]-pmid[1]) * n[1] + (eyeCamera[2]-pmid[2]) * n[2] >= 0) {
-                    context.fillStyle="purple";
+                    context.fillStyle=temp;
                     context.lineWidth = '2';
                     context.strokeStyle=linecolor;
                     context.beginPath();
